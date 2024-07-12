@@ -8,12 +8,20 @@
         table, tr,td{
             border: 2px solid black;
         }
+      .add{
+        color: white;
+        background-color: chocolate;
+        border-radius: 0.5rem;
+        margin-left: 38%;
+      }
     </style>
 </head>
 <body>
     <form method="POST" action="/user/new">
-        <button>Add New User</button>
+        <button class="add">Add New User</button>
       </form>
+      <br>
+      <hr>
  <table>
     <tr>
         <th>id</th>
@@ -21,18 +29,18 @@
         <th>username</th>
     </tr>
     <%for(user of users){ %>
-        <tr>
+        <tr style="background-color: rgb(159, 225, 214); color: #000;">
             <td> <%= user.id %></td>
             <td> <%=user.email%></td>
             <td><%=user.username %></td>
             <td>
             <form method="GET" action="/user/<%= user.id %>/edit"> 
-                <button>Edit username</button>
+                <button style="border-radius: 6px; background-color: darkgoldenrod;">Edit username</button>
             </form>
             </td>
             <td>
                 <form method="get" action="/user/<%=user.id%>/delete">
-                  <button>Delete</button>
+                  <button style="border-radius: 6px;">Delete</button>
                 </form>
               </td>
         </tr>

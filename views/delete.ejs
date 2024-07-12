@@ -4,9 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Delete User</title>
+    <style>
+      button{
+        background-color: #3a5588;
+        color: #fff;
+        border-radius: 5px;
+      }
+      h3{
+        color: red;
+      }
+    </style>
   </head>
   <body>
-    <h3>To delete this user : <%= user.email %> , enter the password</h3>
+    <h3>To Delete this user : <%= user.email %>  Enter the Password</h3>
     <form method="post" action="/user/<%= user.id%>?_method=DELETE">
       <input placeholder="enter password to delete" name="password" />
       <button>Delete</button>
